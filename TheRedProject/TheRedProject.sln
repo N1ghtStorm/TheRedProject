@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheRedProject", "TheRedProject\TheRedProject.csproj", "{DD2CF089-9180-42E1-8ADA-E43FD393013E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XTheRedProjectTest", "XTheRedProjectTest\XTheRedProjectTest.csproj", "{811F629E-ABE1-4437-A695-5615D76768F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcServiceTest", "GrpcServiceTest\GrpcServiceTest.csproj", "{85E567A8-C700-4EBF-A0CF-A1299EDC61EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{DD2CF089-9180-42E1-8ADA-E43FD393013E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD2CF089-9180-42E1-8ADA-E43FD393013E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD2CF089-9180-42E1-8ADA-E43FD393013E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{811F629E-ABE1-4437-A695-5615D76768F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{811F629E-ABE1-4437-A695-5615D76768F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{811F629E-ABE1-4437-A695-5615D76768F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{811F629E-ABE1-4437-A695-5615D76768F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85E567A8-C700-4EBF-A0CF-A1299EDC61EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85E567A8-C700-4EBF-A0CF-A1299EDC61EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85E567A8-C700-4EBF-A0CF-A1299EDC61EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85E567A8-C700-4EBF-A0CF-A1299EDC61EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
