@@ -17,11 +17,11 @@ namespace XTheRedProjectTest
     public class UnitGrpcTest
     {
         [Fact]
-        public void TestGrpc()
+        public async void TestGrpc()
         {
             //Arrange
             var mock = new Mock<IGrpcAction>();
-            mock.Setup(a => a.SayHello("https://localhost:5001", "Dima")).Returns(Task.FromResult(new GrpcGreeter.HelloReply()));
+            mock.Setup(a => a.SayHello("https://localhost:5001", "Dima")).ReturnsAsync(new GrpcGreeter.HelloReply { Message = "Hello Dima"});
             Console.WriteLine(mock.Object.ToString());
             //throw new Exception(mock.Object.SayHello("https://localhost:5001", "Dima"));
             IGrpcAction grpcAction = new GrpcAction();
@@ -29,12 +29,12 @@ namespace XTheRedProjectTest
            
 
             //Act
-            var result = grpcAction.SayHello("https://localhost:5001", "Dima");
+            var result = await grpcAction.SayHello("https://localhost:5001", "Dima");
 
-
+            var mock_result = await mock.Object.SayHello("https://localhost:5001", "Dima");
 
             //Assert
-            Assert.Equal(mock.Object.SayHello("https://localhost:5001", "Dima"),result);
+            Assert.Equal(result, mock_result);
         }
     }
 }
