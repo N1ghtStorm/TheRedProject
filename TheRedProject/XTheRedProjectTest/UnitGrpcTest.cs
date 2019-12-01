@@ -23,10 +23,7 @@ namespace XTheRedProjectTest
             var mock = new Mock<IGrpcAction>();
             mock.Setup(a => a.SayHello("https://localhost:5001", "Dima")).ReturnsAsync(new GrpcGreeter.HelloReply { Message = "Hello Dima"});
             Console.WriteLine(mock.Object.ToString());
-            //throw new Exception(mock.Object.SayHello("https://localhost:5001", "Dima"));
-            IGrpcAction grpcAction = new GrpcAction();
-            //GreeterService a = new GreeterService();
-           
+            IGrpcAction grpcAction = new GrpcAction();          
 
             //Act
             var result = await grpcAction.SayHello("https://localhost:5001", "Dima");
