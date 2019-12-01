@@ -1,0 +1,8 @@
+*/.vs/
+*/*/bin/
+*/*/obj/
+EntityHttpFiltering/EntityHttpFiltering/bin/*
+EntityHttpFiltering/EntityHttpFiltering/obj/*
+EntityHttpFiltering/DataFilteringModels/bin/*
+EntityHttpFiltering/DataFilteringModels/obj/*
+EntityHttpFiltering/DataFilteringModels/obj/Debug
