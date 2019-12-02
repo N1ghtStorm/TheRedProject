@@ -1,4 +1,6 @@
-﻿using Grpc.Net.Client;
+﻿using Google.Protobuf;
+using Grpc.Net.Client;
+using GrpcComServ;
 using GrpcGreeter;
 using System;
 using System.Collections.Generic;
@@ -22,6 +24,18 @@ namespace TheRedProject.Grpc
             //Console.WriteLine("Press any key to exit...");
             //Console.ReadKey();
             return reply;
+        }
+
+        public async Task<Result> ApiWriteAsync(string url, byte[] fileContainer)
+        {
+            var channel = GrpcChannel.ForAddress(url);
+            var client = new ApiGateway.ApiGatewayClient(channel);
+            //client.
+            //var r = client.SetConfig();
+            var result = await client.SetConfig();
+            using var codedOutputStream = new CodedOutputStream(fileContainer);
+            result.WriteTo(codedOutputStream);
+            return result;
         }
     }
 }

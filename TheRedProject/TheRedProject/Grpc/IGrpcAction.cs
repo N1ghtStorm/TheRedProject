@@ -1,4 +1,5 @@
-﻿using GrpcGreeter;
+﻿using GrpcComServ;
+using GrpcGreeter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace TheRedProject.Grpc
     public interface IGrpcAction
     {
         Task<HelloReply> SayHello(string url, string clientName);
+        Task<Result> ApiWriteAsync(string url, byte[] fileContainer);
     }
 }

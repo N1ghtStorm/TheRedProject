@@ -1,0 +1,36 @@
+﻿syntax = "proto3";
+option cc_enable_arenas = true;
+option csharp_namespace = "GrpcComServ";
+
+package testpack;
+
+service ApiGateway {
+rpc SetConfig (stream FilePart) returns (Result) {}
+rpc GetConfig (Empty) returns (stream FilePart) {}
+rpc UpdateConfig(CfgFile) returns(Result) {}
+}
+
+message Empty {}
+
+message Result {
+enum Value {
+SUCCESS = 0;
+FAIL = 1;
+}
+Value value = 1;
+}
+
+message ConfigVersion {
+string value = 1;
+}
+
+message FilePart {
+ConfigVersion version = 1;
+int32 part_number = 2;
+int32 length = 3;
+bytes buffer = 4;
+}
+
+message CfgFile {
+string name = 1;
+}
