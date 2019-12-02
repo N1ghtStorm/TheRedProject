@@ -26,7 +26,13 @@ namespace GrpcServiceTest.Services
         public override Task<Result> SetConfig(IAsyncStreamReader<FilePart> requestStream, ServerCallContext context)
         {
             var a = requestStream.ReadAllAsync();
-            return Task.FromResult(new Result());
+            var b = a.GetAsyncEnumerator();
+            //b.Current();
+            a.ConfigureAwait(true);
+            return Task.FromResult(new Result
+            {
+
+            }); 
 
             // throw new RpcException(new Status(StatusCode.Unimplemented, a.ToString()));
             // base.SetConfig(requestStream, context);
